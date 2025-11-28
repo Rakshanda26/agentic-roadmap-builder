@@ -1,4 +1,4 @@
-from tools.research_api_tool import EURI_CLIENT
+
 
 def run_synthesizer(raw_data: dict):
     def stringify(value):
@@ -29,7 +29,7 @@ Context:
 {combined_text}
 """
 
-    response = EURI_CLIENT.generate_completion(prompt=prompt)
+    response = CLIENT.generate_completion(prompt=prompt)
     try:
         return response["choices"][0]["message"]["content"]
     except (KeyError, IndexError, TypeError):
